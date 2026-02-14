@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Monthsary</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #93eebb;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 30px;
+    }
+
+    .envelope {
+      width: 200px;
+      height: 120px;
+      margin: 100px auto;
+      background: #b4f6bc;
+      position: relative;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .flap {
+      width: 0;
+      height: 0;
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+      border-bottom: 60px solid #99ffaa;
+      position: absolute;
+      top: -60px;
+      left: 0;
+      transition: transform 1s;
+      transform-origin: bottom;
+    }
+
+    .envelope.open .flap {
+      transform: rotateX(180deg);
+    }
+
+
+     .letter {
+  position: absolute;
+  top: 100%;      
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  padding: 15px;
+  background: white;
+  border: 2px solid #7ce9ab;
+  border-radius: 10px;
+  opacity: 0;
+  transition: top 1.5s ease, opacity 1.5s ease;
+}
+
+
+   .envelope.open .letter {
+  top: -160px;       
+  opacity: 1;
+}
+
+
+    .next-btn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #3ac051;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .pictures {
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  flex-wrap: wrap;         /* allows multiple rows */
+  gap: 20px;
+  margin-top: 50px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.5s ease;
+}
+
+    .pictures.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .card {
+      width: 300px;
+      height: 300px;
+      perspective: 1000px;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 1s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+
+    .card.flip .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border: 2px solid #73e59d;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-front {
+      background: #fff;
+    }
+
+    .card-front img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 10px;
+    }
+
+    .card-back {
+      background: #bee7b5;
+      color: #fff;
+      transform: rotateY(180deg);
+      font-size: 16px;
+      padding: 10px;
+      flex-direction: column;
+    }
+
+    .card-back textarea {
+      width: 90%;
+      height: 70%;
+      border-radius: 5px;
+      border: none;
+      padding: 5px;
+      resize: none;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Happy Monthsary & Valentines !!</h1>
+
+ 
+  <div class="envelope" onclick="openEnvelope()">
+    <div class="flap"></div>
+  <div class="letter" id="letter">
+    <h2>HELLO LOVIE</h2>
+    <p> Hi Kris,<br><br><span class = "indent"> This is our seventh monthsarry of being together. This past few months we've been thru a lot. But of course, we're strong and always fighting for our relationship. I remember when you asked me if we're still not together and I said yes, because you didn't even asked me clearly that you wanted to court me. And also I said that I won't be saying yes to you if I'm not 18, but guess what? You waited, waited for me to become 18 years old and waited to be my girlfriend. And you know that I always appreciate you? Since your love to me is always seen by the others, you're so transparent that you're in love with me. And I'm so happy, that they know me. Your family, friends, especially your mother, you know that I'm getting scared whenever I hear her hahahaha I don't want to know that she doesn't like me, but surprisingly I hope that she likes me. You know it's kinda surprising that we come from this far, since from the beginning I just wanted to play? I don't know if your lucky or unlucky that I invited you, probably you're happy since you're my boyfriend right now. For the last time, happy motmot, my love. Always remember that I love you, and missing you always. I hope that we can meet already, I'm here always waiting for you. </span>
+    </p>
+    <button class="next-btn" onclick="showPictures()">Next</button>
+  </div> </div>
+
+
+  <div class="pictures" id="pictures">
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="me1.jpg" alt="Picture 1">
+        </div>
+        <div class="card-back">
+          <textarea placeholder="HI!!!! When I sent this to you on February 5, you told me that I was backreading. And you were right. hahahahahaha But you know, I've been thinking where are we if I didn't chat you and invite you to play that midnight. You send me that chat exactly at 3:33, what if I didn't chat the player who's noob when it comes to karina???? I love you."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="me23.jpg" alt="Picture 2">
+        </div>
+        <div class="card-back">
+          <textarea placeholder="Next, you flirting with me :p who's this stew who wants me watched his play? You know what hero I've love you to play? It's Hayabusa, him or no one. I don't know but I love it whenever you play jungle but I know you love playing marksman. Anyway, I enjoyed it. Always, whenever you stream your gameplay to me. I didn't find it boring, to me I feel that you always wanted me to be included with you. And I love you for doing that."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="me3.jpg" alt="Picture 2">
+        </div>
+        <div class="card-back">
+          <textarea placeholder="Watching movies with you is my favourite moment with you. To me, the bond is one of the reason why I fell in love with you. Because you love to prioritize me, your focus is only with me and the movie. And one of the biggest tampo that I ever felt was when you decided that we should stop watching. I know that the reason is you having a tight schedule with school and games. And I understand it all, I don't want to be hindrance to your path to where you want to bloom."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="me4.jpg" alt="Picture 2">
+        </div>
+        <div class="card-back">
+          <textarea placeholder="Bruh, I don't know why but I love it whenever I'm involved with your account. Especially right now, you using my nickname and telling that you love me so much. I'm so happy when you decided to change your name, but it doesn't mean na you don't change your name. Clearly said naman na you can change anytime you want. And also remember that I love you, too."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="me5.jpg" alt="Picture 2">
+        </div>
+        <div class="card-back">
+          <textarea placeholder="Of couse, this us whenever you play valorant. I miss watching your gameplay : ( I hope you can play valorant again, even though you're always tilted. I miss our bonding whenever you're streaming valorant huhuhu And also this is one of my favourite moments, of course, I don't wanna forget it, you always shines with the game whenever you love it. So fighting, baby, I know you can do anything and I'm always right here supporting you!"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="me6.jpg" alt="Picture 2">
+        </div>
+        <div class="card-back">
+          <textarea placeholder="AHHHH!!! I got my laptop here and of course I downloaded valorant for you!! Even though I don't know how to play it, you gave patience with me everytime we play. But as the time goes by, you don't want to play valorant anymore. With the little time that you played with me, I enjoyed and loved it. But at least, we tried to play na game even though I'm sucks with it. I'm so excited to play that game but also realizing that not all the games that you play is I can play too. It's okay for me though, that is your personal time whenever you're playing. I respect it, and I'm always be thankful to you. I love you, lagi."></textarea>
+        </div>
+      </div>
+    </div>
+
+     <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="me7.jpg" alt="Picture 2">
+        </div>
+        <div class="card-back">
+          <textarea placeholder="AHHHHH!! THIS, I FORGOT THE NAME OF THE GAME BUT ONE OF THE FAVES WHENEVER WE PLAY ROBLOX. I know you always beat me on this, bro is so good whenever he plays. But all I knew was I really enjoyed our games, and it become our stress reliver too. LETS PLAY THIS GAME AGAIN, PLEASE   ><"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="me8.jpg" alt="Picture 2">
+        </div>
+        <div class="card-back">
+          <textarea placeholder="And of couse, the summit that I've been wanting to play but you so arte whenever we play this because I'm always dead. You so mean everytime you left me bruh. But I'm happy that we able to finish it, thank you for the patience you've been dedicated to me. I LOVE YOU"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="me9.jpg" alt="Picture 2">
+        </div>
+        <div class="card-back">
+          <textarea placeholder="And, Kris is a baby for a reason!! Happy Seventh Monthsarry with you, my love."></textarea>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function openEnvelope() {
+      const envelope = document.querySelector('.envelope');
+      envelope.classList.add('open');
+    }
+
+    function showPictures() {
+      const envelope = document.querySelector('.envelope');
+      const letter = document.getElementById('letter');
+      const pictures = document.getElementById('pictures');
+
+      letter.style.opacity = '0';
+      setTimeout(() => {
+        letter.style.visibility = 'hidden';
+        envelope.style.opacity = '0';
+        setTimeout(() => {
+          envelope.style.visibility = 'hidden';
+          pictures.classList.add('show');
+        }, 1000);
+      }, 1000);
+    }
+
+    function flipCard(card) {
+      card.classList.toggle('flip');
+    }
+  </script>
+
+</body>
+</html>
